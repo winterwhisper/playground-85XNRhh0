@@ -1,4 +1,6 @@
-title: Custom Template
+title: Modern ES6+ Javascript for those who know only a little about that old Javascript.
 plan:
-- title: Welcome
+- title: Part1 - Introduction to this weird Language called Javascript!
   statement: markdowns/welcome.md
+- title: Part 2 - Var vs Const vs Let
+  statement: markdowns/part-2.md
