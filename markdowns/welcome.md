@@ -246,14 +246,14 @@ So far, we thought that using functions as a scope is a great way to achieve mod
 
 ```
 var a = 1;  
-//=> 1\. Add a named function foo() into the global scope
+//=> 1. Add a named function foo() into the global scope
 
 function foo() {   
  var a = 2;  
  console.log( a ); // Print's 2  
 }
 
-//=> 2\. Now call the named function foo()
+//=> 2. Now call the named function foo()
 
 foo();  
 console.log( a ); // Print's 1
@@ -264,10 +264,8 @@ As discussed little above, we can solve both these problems by creating function
 
 ```
 var a = 1;  
-//=> 1\. Add a named function foo() into the global scope
-```
+//=> 1. Add a named function foo() into the global scope
 
-```
 (function foo() {   
  var a = 2;  
  console.log( a ); // Print’s 2  
@@ -353,9 +351,7 @@ Here is an example of **Function declaration**, which printed out the logic.
 ```
 functionTwo();  
 //=> Prints - functionTwo
-```
 
-```
 function functionTwo() {  
   console.log('Hey I am function no. 1');  
 }
