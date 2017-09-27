@@ -25,9 +25,7 @@ Functions are a base to JavaScript. If you can understand functions, then you ju
 function add (harry, larry) {  
  return harry + larry;  
 }
-```
 
-```
 const result = add(1993, 1973);  
 console.log(result); //prints 3966
 ```
@@ -40,9 +38,7 @@ And then there is `return harry + larry` wrapped in curly braces. That statement
 var add = function (harry, larry) {  
   return harry + larry;  
 };
-```
 
-```
 const result = add(1973, 1993);  
 console.log(result);  //prints 3966
 ```
@@ -165,6 +161,7 @@ Now let’s parse the request and execute the functions
 ```
 parseRequest(generateHuman, validateData, errorHandler);  
 parseRequest(generateRobot, validateData, errorHandler);
+```
 
 Here is the result that I got from the log, please note that age will vary due to random function inside the `age` key of an object function.
 
