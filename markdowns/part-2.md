@@ -108,9 +108,7 @@ Also, you can define variables in ES6 with the `const` declaration syntax. Varia
 ```
 // Valid constant  
 const maxItems = 30;
-```
 
-```
 // Syntax error: missing initialization  
 const name;
 ```
