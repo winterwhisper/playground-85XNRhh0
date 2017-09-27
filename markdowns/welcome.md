@@ -180,13 +180,13 @@ If you want to work efficiently with JavaScript, understanding scope is very imp
 
 A variable’s scope is the context in which the variable exists. The scope help’s you to specify from where you can access a variable and whether you have access to the variable in that context or not? Scopes can be defined globally or locally.
 
-**Global Scope  
+**Global Scope**
 
-**Any variable that you declare by default is been defined in global scope. Yes yes, this is one of the most stupid language design based decision taken within JavaScript. A global variable is visible in all other scopes and can be modified by any scope. Unfortunately, a global variable is visible in all other scopes and can be modified by any scope thus making it harder to run the loosely combined sub-programs within the same program. If the sub-programs have one or more global variables that share the same name(s), then they will get involved with each other and likely fail, mostly in an unrecognizable manner and is known as namespace clash.
+Any variable that you declare by default is been defined in global scope. Yes yes, this is one of the most stupid language design based decision taken within JavaScript. A global variable is visible in all other scopes and can be modified by any scope. Unfortunately, a global variable is visible in all other scopes and can be modified by any scope thus making it harder to run the loosely combined sub-programs within the same program. If the sub-programs have one or more global variables that share the same name(s), then they will get involved with each other and likely fail, mostly in an unrecognizable manner and is known as namespace clash.
 
-**Local Scope  
+**Local Scope**
 
-**JavaScript doesn’t have block-level scope aka the variables scoped to surrounding curly brackets instead, the language have a function-level scope. The variables declared in a function are simply local variables and is only accessible within that function or by functions inside that function.
+JavaScript doesn’t have block-level scope aka the variables scoped to surrounding curly brackets instead, the language have a function-level scope. The variables declared in a function are simply local variables and is only accessible within that function or by functions inside that function.
 
 ```
 var name = 'Harman Singh Manchanda'; // Global Variable  
@@ -203,8 +203,22 @@ twitter();         //prints – Local
 The JavaScript variables are scoped at function level. Think of this as a small bubble being created which prevents the variable to be visible from outside this bubble. Function creates such a bubble for variables declared inside the function.
 
 ```
+-GLOBAL SCOPE---------------------------------------------|
+var g =0;                                                 |
+function foo(a) { -----------------------|                |
+    var b = 1;                           |                |
+    //code                               |                |
+    function bar() { ------|             |                |
+        // ...             |ScopeBar     | ScopeFoo       |
+    }                ------|             |                |
+    // code                              |                |
+    var c = 2;                           |                |
+}----------------------------------------|                |
+foo();   //WORKS                                          |
+bar();   //FAILS                                          |
+----------------------------------------------------------|
 
-_//=> Source: Mastering Javascript_
+//=> Source: Mastering Javascript 
 ```
 
 As you can see the language uses the so called “scope chains” to establish the scope for a given function. That mean’s that there is typically one global scope, and each function defined below has its own nested scope. A function that defined in an another function has a local scope which is getting used up by linking up to an outer function. **It’s always the position in the source that defines the scope.** When it tries to resolve a variable, the language starts at the innermost scope and searches outwards.
