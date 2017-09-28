@@ -4,7 +4,7 @@ This article is Part 2 for the Series **“Modern ES6+ Javascript for those who 
 
 ![](https://cdn-images-1.medium.com/max/800/1*uKSqphvj9r712aKOujuZtQ.png)
 
-**_Credits:_** _This Part of the Article series has been referred up from the_ [**_book_**](https://leanpub.com/understandinges6/) **_“_**_Understanding ECMAScript 6 by Nicholas C. Zakas_**_”._**
+**_Credits:_** _This Part of the Article series has been referred from the_ [**_book_**](https://leanpub.com/understandinges6/) **_“_**_Understanding ECMAScript 6 by Nicholas C. Zakas_**_”._**
 
 Traditionally, the way variable declarations work has been that weird part of programming in JavaScript. Variables creation depend on how you declare them, and **ES6** offers options to make controlling scope easier. This article will look to clear on why those classic `var` declarations can be confusing and will also introduce block-level bindings aka `const` and `let`.
 
