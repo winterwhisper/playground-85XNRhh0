@@ -1,7 +1,5 @@
 # Part1 - Introduction to this weird Language called Javascript!
 
-![](https://cdn-images-1.medium.com/max/800/1*1DWxwYJJcq-Id4D3HbJkIw.png)
-
 This article is Part 1 for the Series **“Modern ES6+ Javascript for those who know only a little about that old Javascript.”**
 
 _Please note that this article assumes that you have little knowledge about JavaScript. Just a little… string, numbers, booleans… knowledge of variables will be good!_
