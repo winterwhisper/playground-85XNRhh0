@@ -6,8 +6,6 @@ This article is Part 2 for the Series **“Modern ES6+ Javascript for those who 
 
 **_Credits:_** _This Part of the Article series has been referred up from the_ [**_book_**](https://leanpub.com/understandinges6/) **_“_**_Understanding ECMAScript 6 by Nicholas C. Zakas_**_”._**
 
-Looking for Part 1? [Click Here](https://codeburst.io/part-1-introduction-to-this-weird-language-called-javascript-7704b4931b86).
-
 Traditionally, the way variable declarations work has been that weird part of programming in JavaScript. Variables creation depend on how you declare them, and **ES6** offers options to make controlling scope easier. This article will look to clear on why those classic `var` declarations can be confusing and will also introduce block-level bindings aka `const` and `let`.
 
 Variable declarations using var get treated as if they are at the top of the function (or global scope, if declared outside of a function) regardless of where the actual declaration occurs; this is called **hoisting**. See the example below to see what hoisting does:
