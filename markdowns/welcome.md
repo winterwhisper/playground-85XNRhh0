@@ -21,7 +21,7 @@ JavaScript is a very loosely-typed language and has been built around functions,
 
 Functions are a base to JavaScript. If you can understand functions, then you just got the single most important weapon in your arsenal. The most important fact about functions is that in JavaScript, functions are first-class objects. They are treated like any other JavaScript object. Just like other JavaScript data types, they can be assigned to variables, array entries, and properties of other objects, declared with literals, be returned as values from functions, possess dynamically created properties and even passed as function parameters. They are the primary unit of execution and are the pieces where you would wrap all your code and is declared using a function literal. Here is a small example that will demonstrate how a function is declared.
 
-```
+```javascript runnable
 function add (harry, larry) {  
  return harry + larry;  
 }
@@ -34,7 +34,7 @@ It all starts with a `function` keyword followed by the function name. Cool part
 
 And then there is `return harry + larry` wrapped in curly braces. That statement is actually body of the function and are executed when the function is invoked. This method is also known as **function statement**. When you are declaring functions like this, the content of the function get’s compiled and an object with the same name as the functions name is created. An another way of function getting declared is through **function expressions.**
 
-```
+```javascript runnable
 var add = function (harry, larry) {  
   return harry + larry;  
 };
@@ -45,19 +45,19 @@ console.log(result);  //prints 3966
 
 As discussed, if there is no name given then that is an anonymous function. This anonymous function is getting assigned to an `add` variable and this variable is used to invoke the function same like in the earlier example. The problem with this style is that you can’t have recursive calls. Oh, Big word alert… Recursion! Recursion is a smart coding paradigm where the function calls itself. Back to the problem, Named function expressions can be used to to solve this limitation. For example,
 
-```
+```javascript runnable
 var result = function factorial(n) {  
  if (n <= 1) {  
  return 1;  
  }  
- return n * factorial(n — 1);  
+ return n * factorial(n - 1);  
 };  
 console.log(result(4));
 ```
 
 As you can see that instead of creating an anonymous function, you will create a named function and as the function has a name, now it can call himself recursively. But the cool part I love about is the Self Invoked Functions. Here’s an example…
 
-```
+```javascript runnable
 (function greet() {  
   console.log("Hello all from inside.");  
 })(); //=> Self invoked!
@@ -65,7 +65,7 @@ As you can see that instead of creating an anonymous function, you will create a
 
 Please note that you can also self invoking functions like this.
 
-```
+```javascript runnable
 (function greet() {  
   console.log("Hello all from inside.");  
 }()); //=> I am Self invoked too!
@@ -73,7 +73,7 @@ Please note that you can also self invoking functions like this.
 
 Did, you saw that difference `(function greet(){…})();` instead of `(function greet(){…}());`. I hope you did, once defined, a function can be called in other JavaScript functions too. As the body of the function is executed, that code which get’s called and execute the function continues to execute. Funny enough, you can also pass a function as a parameter to an another function.
 
-```
+```javascript runnable
 //=> Change to uppercase, gets executed with an `execute` function!
 
 function changeToUpperCase(value) {  
@@ -87,12 +87,12 @@ function execute(a, passToAnother) {
  console.log(passToAnother(a));  
 }
 
-execute(‘harry’, changeToUpperCase); //=> HARRY
+execute('harry', changeToUpperCase); //=> HARRY
 ```
 
 As, you can see that here we are passing a function reference as an argument to another function. Isn’t this cool? This function may or may not return a value. In above examples, we used an `add` function that returned a value through the code that is getting called up. Instead of returning a value at the end of the function, calling a `return` allows you to conditionally return from a function in an accurate manner.
 
-```
+```javascript runnable
 var omit5FromLoop = function(x){  
  if (x % 5 === 0) return;  
  console.log(x);  
@@ -111,7 +111,7 @@ This will return a loop like this below. If you see carefully there is no **5\.*
 
 Let’s start from scratch and create a variable `validateData` which will validate if the person’s age is less than 1 or greater than 99? If yes, the function will return true or else, will return false.
 
-```
+```javascript
 var validateData = function(data) {  
  person = data();  
  console.log(person);  
@@ -122,7 +122,7 @@ var validateData = function(data) {
 
 Then we will create an error handler, so that this process a request if there is an error coming from validation.
 
-```
+```javascript
 var errorHandler = function(error) {  
  console.log(“Error while processing age”);  
 };
@@ -130,7 +130,7 @@ var errorHandler = function(error) {
 
 Then, we will create a request parser which will take three functions as arguments, these arguments are responsible for attaching the specifics together: the data, validator, and error handler.
 
-```
+```javascript
 function parseRequest(data,validateData,errorHandler) {  
  var error = validateData(data);  
  if (!error) console.log(“no errors”);  
@@ -140,7 +140,7 @@ function parseRequest(data,validateData,errorHandler) {
 
 Now, we will generate a human and a robot which will be responsible for creating an object data through functions. In this example, the name is typed as a static term, whereas age is getting counted from a random number between 1 to 99.
 
-```
+```javascript
 var generateHuman = function() {  
   return {  
     name: 'Harry Manchanda',  
@@ -158,17 +158,55 @@ var generateRobot = function() {
 
 Now let’s parse the request and execute the functions
 
-```
+```javascript
 parseRequest(generateHuman, validateData, errorHandler);  
 parseRequest(generateRobot, validateData, errorHandler);
 ```
 
-Here is the result that I got from the log, please note that age will vary due to random function inside the `age` key of an object function.
+Now let's run all of this code:
 
+```javascript runnable
+var validateData = function(data) {  
+ person = data();  
+ console.log(person);  
+ if (person.age < 1 || person.age > 99) return true;  
+ else return false;  
+};
+
+var errorHandler = function(error) {  
+ console.log("Error while processing age");  
+};
+
+function parseRequest(data,validateData,errorHandler) {  
+ var error = validateData(data);  
+ if (!error) console.log("no errors");  
+ else errorHandler();  
+}
+
+var generateHuman = function() {  
+  return {  
+    name: 'Harry Manchanda',  
+    age : Math.floor(Math.random() * (100 - 1)) + 1,  
+  };  
+};
+
+var generateRobot = function() {  
+  return {  
+    name: 'Robot Singh Sidhu',  
+    age : Math.floor(Math.random() * (100 - 1)) + 1,  
+  };  
+};
+
+parseRequest(generateHuman, validateData, errorHandler);  
+parseRequest(generateRobot, validateData, errorHandler);
 ```
-{ name: ‘Harry Manchanda’, age: 16 }  
+
+Here is the result that I got from the log, please note that age will vary in your result due to random function inside the `age` key of an object function.
+
+```bash
+{ name: 'Harry Manchanda', age: 16 }  
 no errors  
-{ name: ‘Robot Singh Sidhu’, age: 10 }  
+{ name: 'Robot Singh Sidhu', age: 10 }  
 no errors
 ```
 
@@ -188,7 +226,7 @@ Any variable that you declare by default is been defined in global scope. Yes ye
 
 JavaScript doesn’t have block-level scope aka the variables scoped to surrounding curly brackets instead, the language have a function-level scope. The variables declared in a function are simply local variables and is only accessible within that function or by functions inside that function.
 
-```
+```javascript runnable
 var name = 'Harman Singh Manchanda'; // Global Variable  
 function twitter () {  
   var name = 'Harry Manchanda'; // local variable  
@@ -202,7 +240,7 @@ twitter();         //prints – Local
 
 The JavaScript variables are scoped at function level. Think of this as a small bubble being created which prevents the variable to be visible from outside this bubble. Function creates such a bubble for variables declared inside the function.
 
-```
+```asciidoc
 -GLOBAL SCOPE---------------------------------------------|
 var g =0;                                                 |
 function foo(a) { -----------------------|                |
@@ -227,7 +265,7 @@ Within the visual, you can easily see that the `foo()` function has been defined
 
 Believe it or not but this is powerful. Please take a moment to think about it. We have just discussed how restricted and out of control global scope have gone in the language. What about if we take an random piece of code and wrap it around within a function? We will be able to hide and create a scope bubble around this piece of code. No? Creating the correct scope using function wrapping will only help us create correct code and prevent those difficult to detect bugs. An another advantage through this is that you are hiding variables and functions within this scope and thus, you can avoid those collisions between two identifiers. The following example shows such a bad case:
 
-```
+```javascript 
 function foo() {  
  function bar(a) {  
  i = 2; // changing the ‘i’ in the enclosing scope’s for-loop  
@@ -244,7 +282,7 @@ In this `bar()` function, we are accidentally modifying the value of `i=2` and t
 
 So far, we thought that using functions as a scope is a great way to achieve modularity and correctness within the language. Well, though this technique works, it’s not really not a great one. The first problem we are facing is that we must create a named function. If we keep on creating such functions just to introduce the function scope, we are polluting the global scope or the parent scope. Additionally, we will have to keep calling such functions. This introduces a lot of boilerplate code, which makes it hard for the code to be read properly as time passes by.
 
-```
+```javascript runnable
 var a = 1;  
 //=> 1. Add a named function foo() into the global scope
 
@@ -262,7 +300,7 @@ console.log( a ); // Print's 1
 We just introduced the function scope by creating a new function `foo()` to the global scope and later on, called this function to execute the code.  
 As discussed little above, we can solve both these problems by creating functions that immediately get executed.
 
-```
+```javascript runnable
 var a = 1;  
 //=> 1. Add a named function foo() into the global scope
 
@@ -279,8 +317,12 @@ You would notice that the wrapping function statement is starting with a `functi
 
 Please note that JavaScript just does not have the concept of block scopes. Developer’s coming from other languages such as Java or C can find this very odd and uncomfortable. **ES6** introduces the **let** and **const** keywords to introduce traditional block scope. This is so incredibly convenient that in modern JavaScript, thanks to tools like babel, you are supporting ES6, and thus you should always use the `let` or `const` keyword. We will discuss `let` and `const` instead of `var`. That being said, this is not the right time to discuss that. It can soon go off the topic, we will discuss it in upcoming parts of this series. That being said, find an example of it below:
 
-```
-var foo = true;if (foo) { let bar = 42; //variable bar is local in this block { } console.log( bar );}
+```javascript runnable
+var foo = true;
+if (foo) { 
+  let bar = 42; //variable bar is local in this block { } 
+  console.log( bar );
+}
 console.log( bar ); // ReferenceError
 ```
 
@@ -290,7 +332,7 @@ Hoisting is a JavaScript mechanism where variables and function declarations are
 
 Let’s test you out, without running can you answer what this below code will print out to the console?
 
-```
+```javascript runnable
 var video = 'HTML5 is the present!';  
 if(true) {  
   var video = 'Long live Flash';  
@@ -300,13 +342,13 @@ console.log(video);
 
 If you said, ‘Long live Flash’… then good luck you either know hoisting, or you guessed it right. For other fellow’s I would like to tell that this is happening due to the function-level scoping in JavaScript within a variable declaration (using `var` keyword). It is very important to remember that only the declarations themselves are hoisted, while any assignments or other executable logic are left in place. For example,
 
-```
+```javascript runnable
 var video;  
 console.log(video); //=> undefined
 
-video = ‘HTML5 is the present!’;  
+video = 'HTML5 is the present!';  
 if(true) {  
- var video = ‘Long live Flash’;  
+ var video = 'Long live Flash';  
 }
 
 console.log(video); //=> Long live Flash
@@ -316,17 +358,17 @@ But hey, as told earlier that variables that are declared (using `var` keyword) 
 
 #### ES6, you are awesome!
 
-```
-var structure = ‘HTML5 is the best!’;  
-let interactivity = ‘ES6 Rules’;  
+```javascript runnable
+var structure = 'HTML5 is the best!';  
+let interactivity = 'ES6 Rules';  
 if (true) {  
- var structure = ‘Long live Flash’; //=> scope is global  
- let interactivity = ‘ES5 Sucks’; //=> scope is (local) block-level  
- console.log(structure); //=> Print’s “Long live Flash”  
- console.log(interactivity); //=> Print’s “ES5 Sucks”  
+ var structure = 'Long live Flash'; //=> scope is global  
+ let interactivity = 'ES5 Sucks'; //=> scope is (local) block-level  
+ console.log(structure); //=> Print's 'Long live Flash' 
+ console.log(interactivity); //=> Print's 'ES5 Sucks'  
 }  
-console.log(structure); //=> Print’s “Long live Flash”  
-console.log(interactivity); //=> Print’s “ES6 Rules”
+console.log(structure); //=> Print's 'Long live Flash'  
+console.log(interactivity); //=> Print's 'ES6 Rules'
 ```
 
 Part 2 is all about this. Check back soon!
@@ -337,7 +379,7 @@ Functions can be defined in two ways, as Function declarations or function expre
 
 Here is an example of Function expression, which returned a type error.
 
-```
+```javascript runnable
 functionOne();  
 //=> TypeError: functionOne is not a function
 
@@ -348,7 +390,7 @@ var functionOne = function() {
 
 Here is an example of **Function declaration**, which printed out the logic.
 
-```
+```javascript runnable
 functionTwo();  
 //=> Prints - functionTwo
 
@@ -361,7 +403,7 @@ As you can see, a function declaration is processed when the execution enters th
 
 But hey, if there is a thing to remember in this scenario then that is that you should never use function declarations conditionally. This behaviour is non-standardised and thus may behave differently across platforms. The following example shows such a scenario where we are trying to use function declarations conditionally by assigning different function body to function `sayHello()` but please remember that such a conditional code is not guaranteed to work across all browsers and mostly results in an unpredictable results.
 
-```
+```javascript
 if (true) {  
  function sayHello() {  
  return ‘Harry is awesome!’;  
@@ -372,23 +414,21 @@ else {
  return ‘Harry is stupid!’;  
  }  
 }  
-foo();
 ```
 
 Never do this, different browsers will behave differently in this case. A function declaration should never be placed in the block. You should be using an function expression as it’s perfectly safe and in-fact a smart choice.
 
-```
+```javascript
 if (true) {  
  sayHello = function () {  
- return ‘Harry is awesome!’;  
+ return 'Harry is awesome!';  
  };  
 }  
 else {  
  sayHello = function () {  
- return ‘Harry is stupid!’;  
+ return 'Harry is stupid!';  
  };  
 }  
-foo();
 ```
 
 The thing with declarations is that they are only allowed to appear within the program or function body. They cannot appear in a block `{ ... }`. Weird, No? Yes but that’s just how JavaScript goes, the blocks are only allowed contain statements and not function declarations. Thus Function expressions, are very popular due to this weird stuff. The common pattern among JavaScript developer’s is that they fork the function definitions based on some kind of a condition. These forks usually happen in the same scope and thus is almost always necessary to use function expressions.
@@ -397,7 +437,7 @@ The thing with declarations is that they are only allowed to appear within the p
 
 An argument parameter is a collection of all the arguments passed to the function. A collection has a property named `length` that would contain the count of arguments, and the individual argument values can be obtained by using an array indexing notation. But hey, arguments parameter is not a JavaScript array and if you would try to use array methods on arguments, GOOD LUCK! Think of arguments as an array-like structure which is helping it to write functions that can take an unspecified number of parameters. See the below example:
 
-```
+```javascript runnable
 var sum = function () {   
  var i, total = 0;  
  for (i = 0; i < arguments.length; i += 1)   
@@ -410,7 +450,7 @@ console.log(sum(1,2,3,4)); // print’s 10
 
 Though, the arguments parameter is not really an array but it is possible to convert it to an array like below and once converted, you can manipulate the list as you wish.
 
-```
+```javascript
 var args = Array.prototype.slice.call(arguments);
 ```
 
@@ -422,7 +462,7 @@ Yes `this`, if you can say that you know the `this` keyword very well then Great
 
 **Invocation as a method:** A method is basically a function tied to a property on an object. For methods, `this` is bound to the object on invocation as shown in example below. As you can see, `this` is bound to the person object when invoked by`greet` because `greet` is the method of person.
 
-```
+```javascript runnable
 var person = {  
   name: 'Harry Manchanda',  
   age: 24,  
@@ -438,7 +478,7 @@ person.greet();
 
 In below example, notice how the `greet` function uses this to access the `name` property. The `this` parameter is bound to `Person`.
 
-```
+```javascript runnable
 var Person = function (name) {  
   this.name = name;  
 };

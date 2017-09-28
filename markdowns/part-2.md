@@ -12,7 +12,7 @@ Traditionally, the way variable declarations work has been that weird part of pr
 
 Variable declarations using var get treated as if they are at the top of the function (or global scope, if declared outside of a function) regardless of where the actual declaration occurs; this is called **hoisting**. See the example below to see what hoisting does:
 
-```
+```javascript runnable
 function getValue(condition) {  
   if (condition) {  
     var value = "blue";  
@@ -24,11 +24,15 @@ function getValue(condition) {
   }  
   // value exists here with a value of undefined  
 }
+
+//=> Just for demo
+var result = getValue(true);
+console.log(result);
 ```
 
 If you are new to JavaScript, you might think that the variable value only to be created if the condition evaluates to true. In fact, this is not how JavaScript engines work behind the scenes; the variable value gets created regardless as the engine changes the `getValue` function to look something like this:
 
-```
+```javascript runnable
 function getValue(condition) {  
   var value;  
 
@@ -40,6 +44,10 @@ function getValue(condition) {
     return null;  
   }  
 }
+
+//=> Just for demo
+var result = getValue(true);
+console.log(result);
 ```
 
 The declaration of value is hoisted to the top, while the initialization remains in the same spot. That means the variable value is still accessible from within the else clause. It happens to be like this as the variable would just have a value of undefined the other way around as it hasn’t been initialized.
@@ -54,7 +62,7 @@ Block-level declarations are the ones that declare variables that are far outsid
 
 The `let` declaration syntax is the same as `var`. You can replace var with let to declare a variable, this will limit the variable’s scope to only that current code block. Since let declarations are not hoisted to the top of the enclosing block, you may want always to place let declarations first in the block, so that they are available to the entire block. Here’s a quick example:
 
-```
+```javascript runnable
 function getValue(condition) {  
   if (condition) {  
     let value = "blue";  
@@ -66,6 +74,10 @@ function getValue(condition) {
   }  
   // value doesn't exist here  
 }
+
+//=> Just for demo
+let result = getValue(true);
+console.log(result);
 ```
 
 Here below is the screenshot that shows the difference between `var` and `let` (Check the comments within the code block).
@@ -78,10 +90,10 @@ As you can see, the getValue function with `let` behaves similar to other progra
 
 If a identifier has already been defined within the scope, then using identifier in a let declaration inside that scope throws an error. Check below:
 
-```
+```javascript runnable
 var count = 30;
 
-// Error: `count` has already been declared.  
+// SyntaxError: Identifier 'count' has already been declared
 let count = 40;
 ```
 
@@ -89,9 +101,9 @@ In this example, the count is declared twice: once with var and once with let. A
 
 On the other hand, no error shows up if the let declaration creates a new variable with the same name as a variable in its containing scope, check the code below:
 
-```
+```javascript runnable
 var count = 30;
-if (condition) {  
+if (true) {  
   // Does not throw an error  
   let count = 40;  
 
@@ -105,11 +117,11 @@ This let declaration does not throw any error as it creates a new variable calle
 
 Also, you can define variables in ES6 with the `const` declaration syntax. Variables that are declared using the `const` keyword are considered constants, which means that their values can’t be changed once set. Thus, each const variable must be initialized on the declaration, as shown below:
 
-```
+```javascript runnable
 // Valid constant  
 const maxItems = 30;
 
-// Syntax error: missing initialization  
+//=> SyntaxError: Missing initializer in const declaration
 const name;
 ```
 
