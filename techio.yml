@@ -1,6 +1,4 @@
-title: Modern ES6+ Javascript for those who know only a little about that old Javascript.
+title: Modern ES6+ Javascript Pt. 1
 plan:
-- title: Part1 - Introduction to this weird Language called Javascript!
+- title: Modern ES6+ Javascript Pt. 1
   statement: markdowns/welcome.md
-- title: Part 2 - Var vs Const vs Let
-  statement: markdowns/part-2.md

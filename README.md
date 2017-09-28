@@ -1,1 +1,1 @@
-# Modern ES6+ Javascript for those who know only a little about that old Javascript.
+# Modern ES6+ Javascript Pt. 1
