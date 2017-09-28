@@ -54,11 +54,11 @@ The declaration of value is hoisted to the top, while the initialization remains
 
 It is obvious and understandable that will not be easy for new JavaScript developers to learn declaration hoisting, but please note that misunderstanding this unique behavior can end up causing bugs. To resolve this ES6 introduced block level scoping options to make the controlling a variable’s lifecycle a little more powerful.
 
-### **Block-Level Declarations**
+## **Block-Level Declarations**
 
 Block-level declarations are the ones that declare variables that are far outside of a given block scope. Block scopes, also known as lexical scopes, are created either inside of a function or inside of a block (indicated by the `{` and `}` characters). Block scoping is how many C-based languages work, and the introduction of block-level declarations in ECMAScript 6 is intended to bring that same flexibility (and uniformity) to JavaScript.
 
-#### Let Declaration
+### Let Declaration
 
 The `let` declaration syntax is the same as `var`. You can replace var with let to declare a variable, this will limit the variable’s scope to only that current code block. Since let declarations are not hoisted to the top of the enclosing block, you may want always to place let declarations first in the block, so that they are available to the entire block. Here’s a quick example:
 
@@ -86,7 +86,7 @@ Here below is the screenshot that shows the difference between `var` and `let` (
 
 As you can see, the getValue function with `let` behaves similar to other programming languages. As, variable value is declared using let instead of var , the declaration isn’t hoisted to the top of the function definition, and the variable value is no longer accessible once execution flows out of the if block. If condition evaluates to false, then value is never declared or initialized.
 
-#### No Redeclaration
+### No Redeclaration
 
 If a identifier has already been defined within the scope, then using identifier in a let declaration inside that scope throws an error. Check below:
 
@@ -113,7 +113,7 @@ if (true) {
 
 This let declaration does not throw any error as it creates a new variable called count within the if statement, instead of creating the count in the surrounding block. Inside the if block, this new variable shadows the global count, which prevents access to it until execution leaves the block.
 
-#### Constant Declarations
+### Constant Declarations
 
 Also, you can define variables in ES6 with the `const` declaration syntax. Variables that are declared using the `const` keyword are considered constants, which means that their values can’t be changed once set. Thus, each const variable must be initialized on the declaration, as shown below:
 
@@ -127,7 +127,7 @@ const name;
 
 The `maxItems` variable is initialized, so its const declaration should work without any problems. The `name` variable, however, would cause a syntax error if you tried to run the program containing this code, because name is not initialized.
 
-### Thanks a lot…
+## Thanks a lot…
 
 *  **_If you liked my article and also my passion for teaching, please don’t forget to follow me and also CodeBurst by clicking the links below._**
 *  **_If you would like to hire me for your next cool project, or just want to say hello… my twitter handle is_ **[**_@harmanmanchanda_**](http://bit.ly/tw-harry)** _for getting in touch with me! My DM’s are open to the public so just hit me up._**

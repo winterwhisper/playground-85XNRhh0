@@ -17,7 +17,7 @@ But hey in Modern Javascript, it’s not only about browser. Although web browse
 
 JavaScript is a very loosely-typed language and has been built around functions, dynamic objects, prototypal inheritance, and a powerful object literal notation. Like all other languages, it was built on very sound design principles but the problem was that unlike other languages, it had to evolve along with the browser. Web browsers support various features and standards and thus it tried to accommodate all the ideas that browsers made and unfortunately ended up making some very bad design decisions. These weird parts has overshadowed the good parts of the language for most people. Even now, this hasn’t changed even after the evolution of the web and JavaScript. Developer’s have written bad code, and other developer’s have had frightening experience trying to fix up that bad code and thus as a result, JavaScript got a very bad reputation. [Douglas Crockford](http://javascript.crockford.com/javascript.html) have termed it as one of the most misunderstood programming languages.
 
-### Functions in Javascript
+## Functions in Javascript
 
 Functions are a base to JavaScript. If you can understand functions, then you just got the single most important weapon in your arsenal. The most important fact about functions is that in JavaScript, functions are first-class objects. They are treated like any other JavaScript object. Just like other JavaScript data types, they can be assigned to variables, array entries, and properties of other objects, declared with literals, be returned as values from functions, possess dynamically created properties and even passed as function parameters. They are the primary unit of execution and are the pieces where you would wrap all your code and is declared using a function literal. Here is a small example that will demonstrate how a function is declared.
 
@@ -107,7 +107,7 @@ This will return a loop like this below. If you see carefully there is no **5\.*
 
 ![](https://cdn-images-1.medium.com/max/800/1*p1199PyyvasBulTmQP4zBA.png)
 
-### Passing functions as Data
+## Passing functions as Data
 
 Let’s start from scratch and create a variable `validateData` which will validate if the person’s age is less than 1 or greater than 99? If yes, the function will return true or else, will return false.
 
@@ -212,7 +212,7 @@ no errors
 
 Please note that `parseRequest()` function is fully extendable and in fact can be customised, will be invoked in every request, and because of that there is a single, clean debugging point. I hope by now you would have started to applause the power that JavaScript functions possess like a demon.
 
-### Scoping in JavaScript
+## Scoping in JavaScript
 
 If you want to work efficiently with JavaScript, understanding scope is very important. But the problem is that it’s slightly confusing. That said, I will try to resolve your doubts. Though these concepts may seem straight forward thanks to other languages but hey REMINDER, this is JavaScript! There are some subtle changes that must be understood so that you can master the concept. In JavaScript, the scope refers to the current context of code.
 
@@ -236,7 +236,7 @@ console.log (myName); //prints - Global
 twitter();         //prints – Local
 ```
 
-### Function-level scope versus block-level scope
+## Function-level scope versus block-level scope
 
 The JavaScript variables are scoped at function level. Think of this as a small bubble being created which prevents the variable to be visible from outside this bubble. Function creates such a bubble for variables declared inside the function.
 
@@ -313,7 +313,7 @@ console.log( a ); // Print’s 1
 
 You would notice that the wrapping function statement is starting with a `function`. This means that instead of treating this function as a standard declaration, this function has been treated as a function expression. The `(function foo(){ ... })` statement as an expression meant that the identifier `foo` is to be found only in the scope of the `foo()` function, and not in the outer scope. By hiding the name `foo` in itself would mean that it does not pollute the enclosing scope unnecessarily. This is so useful and far better. Thus we add `()` after the function expression to invoke it immediately. This pattern is the so called, **Immediately Invoked Function Expression** or **IIFE.** Mostly developer’s remove the function name whenever they use IIFE as the primary use of IIFE is to introduce function-level scope, and thus function naming is not required, really!
 
-### Block scopes
+## Block scopes
 
 Please note that JavaScript just does not have the concept of block scopes. Developer’s coming from other languages such as Java or C can find this very odd and uncomfortable. **ES6** introduces the **let** and **const** keywords to introduce traditional block scope. This is so incredibly convenient that in modern JavaScript, thanks to tools like babel, you are supporting ES6, and thus you should always use the `let` or `const` keyword. We will discuss `let` and `const` instead of `var`. That being said, this is not the right time to discuss that. It can soon go off the topic, we will discuss it in upcoming parts of this series. That being said, find an example of it below:
 
@@ -326,7 +326,7 @@ if (foo) {
 console.log( bar ); // ReferenceError
 ```
 
-### Hoisting in Javascript
+## Hoisting in Javascript
 
 Hoisting is a JavaScript mechanism where variables and function declarations are moved to the top of their scope before code execution. In layman’s term that simply means that no matter where your functions and variables are declared, they will be moved to the top of their scope regardless of whether their scope is global or local. It is a very strong feature in the language. It provides high flexibility to the language, if used properly and carefully. Please note that, having a strong understanding of scoping within the language can help you to avoid many common mistakes.
 
@@ -356,7 +356,7 @@ console.log(video); //=> Long live Flash
 
 But hey, as told earlier that variables that are declared (using `var` keyword) are function-level scoped and the block-level scoping with loops and conditionals ( `if,for, while, switch` blocks) just does not determine the limits of the scope.
 
-#### ES6, you are awesome!
+## ES6, you are awesome!
 
 ```javascript runnable
 var structure = 'HTML5 is the best!';  
@@ -373,7 +373,7 @@ console.log(interactivity); //=> Print's 'ES6 Rules'
 
 Part 2 is all about this. Check back soon!
 
-### Function declarations versus function expressions
+## Function declarations versus function expressions
 
 Functions can be defined in two ways, as Function declarations or function expressions and they both serve identical purposes but there is a difference between these two types of declarations.
 
@@ -433,7 +433,7 @@ else {
 
 The thing with declarations is that they are only allowed to appear within the program or function body. They cannot appear in a block `{ ... }`. Weird, No? Yes but that’s just how JavaScript goes, the blocks are only allowed contain statements and not function declarations. Thus Function expressions, are very popular due to this weird stuff. The common pattern among JavaScript developer’s is that they fork the function definitions based on some kind of a condition. These forks usually happen in the same scope and thus is almost always necessary to use function expressions.
 
-### Arguments Parameter
+## Arguments Parameter
 
 An argument parameter is a collection of all the arguments passed to the function. A collection has a property named `length` that would contain the count of arguments, and the individual argument values can be obtained by using an array indexing notation. But hey, arguments parameter is not a JavaScript array and if you would try to use array methods on arguments, GOOD LUCK! Think of arguments as an array-like structure which is helping it to write functions that can take an unspecified number of parameters. See the below example:
 
@@ -454,7 +454,7 @@ Though, the arguments parameter is not really an array but it is possible to con
 var args = Array.prototype.slice.call(arguments);
 ```
 
-#### The this parameter
+### The this parameter
 
 Yes `this`, if you can say that you know the `this` keyword very well then Great, because I ain’t the one who can say that. But still I will try to explain in this context. Whenever a function is invoked, apart from parameters that represent the detailed arguments that were provided on the function call, an implicit (indirect) parameter named `this` is also passed to the function. This refers to an object that’s implicitly associated with the function invocation, commonly termed as a **function context.**
 
@@ -493,7 +493,7 @@ console.log(zuck.greet());
 
 **To be continued…**
 
-### Thanks a lot…
+## Thanks a lot…
 
 * **_If you liked my article and also my passion for teaching, please don’t forget to follow me and also Codeburst by clicking the links below._**
 * **_If you would like to hire me for your next cool project, or just want to say hello… my twitter handle is_ **[**_@harmanmanchanda_**](http://bit.ly/tw-harry)** _for getting in touch with me! My DM’s are open to the public so just hit me up._**
