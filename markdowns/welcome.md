@@ -227,12 +227,12 @@ Any variable that you declare by default is been defined in global scope. Yes ye
 JavaScript doesn’t have block-level scope aka the variables scoped to surrounding curly brackets instead, the language have a function-level scope. The variables declared in a function are simply local variables and is only accessible within that function or by functions inside that function.
 
 ```javascript runnable
-var name = 'Harman Singh Manchanda'; // Global Variable  
+var myName = 'Harman Singh Manchanda'; // Global Variable  
 function twitter () {  
-  var name = 'Harry Manchanda'; // local variable  
-  console.log (name);   
+  var myName = 'Harry Manchanda'; // local variable  
+  console.log (myName);   
 }  
-console.log (name); //prints - Global  
+console.log (myName); //prints - Global  
 twitter();         //prints – Local
 ```
 
