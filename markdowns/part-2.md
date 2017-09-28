@@ -4,7 +4,7 @@ This article is Part 2 for the Series **“Modern ES6+ Javascript for those who 
 
 ![](https://cdn-images-1.medium.com/max/800/1*uKSqphvj9r712aKOujuZtQ.png)
 
-**_Credits:_** _This Part of the Article series has been referred up from the_ [**_book_**](https://leanpub.com/understandinges6/)**_ “_**_Understanding ECMAScript 6 by Nicholas C. Zakas_**_”._**
+**_Credits:_** _This Part of the Article series has been referred up from the_ [**_book_**](https://leanpub.com/understandinges6/) **_“_**_Understanding ECMAScript 6 by Nicholas C. Zakas_**_”._**
 
 Looking for Part 1? [Click Here](https://codeburst.io/part-1-introduction-to-this-weird-language-called-javascript-7704b4931b86).
 
