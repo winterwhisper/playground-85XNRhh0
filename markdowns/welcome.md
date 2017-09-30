@@ -6,6 +6,9 @@ _请注意，本文假设你了解一点点JavaScript相关的知识，就一点
 
 到目前为止，JavaScript是web界和开源社区最流行的语言，由Brendan Eich创建。JavaScript的流行和重要性可以归功于浏览器和JavaScript引擎，Google的V8 (Chrome)和Mozilla的SpiderMonkey (Firefox)就是性能优越的引擎。
 
+> Eich的礼物即使被掩埋了这么长的时间，一旦碰到魔法卷轴，将蜕变为利刃。
+> 这对Elixir的拥护者和炼金术师而言是显而易见的。
+
 > The gift of Eich, relegated for such a long time,  
 > Will descend upon the great iron,  
 > When the magical abilities of its scrolls  
