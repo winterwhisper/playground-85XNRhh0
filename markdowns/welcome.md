@@ -1,4 +1,4 @@
-# Part1 - Introduction to this weird Language called Javascript!
+# Part1 - 不可思议的Javascript!
 
 This article is Part 1 for the Series **“Modern ES6+ Javascript for those who know only a little about that old Javascript.”**
 
