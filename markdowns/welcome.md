@@ -1,8 +1,8 @@
 # Part1 - 不可思议的Javascript!
 
-本文是**“写给新手的现代ES6+ Javascript”**系列的第一章
+本文是 **“写给新手的现代ES6+ JavaScript”** 系列的第一章
 
-_Please note that this article assumes that you have little knowledge about JavaScript. Just a little… string, numbers, booleans… knowledge of variables will be good!_
+_请注意，本文假设你了解一点点JavaScript相关的只是，就一点点。字符串，数字，布尔等等，要能知道变量就更好了！_
 
 JavaScript is (by far) the most popular language on the web and open-source ecosystem. Created by Brendan Eich, though JavaScript’s popularity and significance can be regarded due to its interconnection with the browsers and JavaScript Engines, Google’s V8 (Chrome) and Mozilla’s SpiderMonkey(Firefox) engines are just so extremely optimized monsters.
 
