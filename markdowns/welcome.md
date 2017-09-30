@@ -8,7 +8,7 @@ _请注意，本文假设你了解一点点JavaScript相关的知识，就一点
 
 > Eich的礼物即使被埋没已久但终将蜕变为利刃
 
-但现代JavaScript不仅仅只限于浏览器，虽然web浏览器仍是JavaScript使用最为广泛的平台，但现代数据库例如MongoDB就使用JavaScript作为脚本和查询语言，最为振奋人心的是JavaScript现可作为一个强大的平台来开发可扩展的**服务器**应用。是的，服务器，你没有听错！等等，我入门时的最初印象是HTML、CSS、JS是开发客户端的，你得用像PHP来开发服务端，我记错了吗？没错，但现在一切都改变了, 因为在这个新时代中大家都因NODE而欢呼。
+但现代JavaScript不仅仅只限于浏览器，虽然web浏览器仍是JavaScript使用最为广泛的平台，但现代数据库例如MongoDB就使用JavaScript作为其脚本和查询语言，最为振奋人心的是JavaScript现可作为一个强大的平台来开发可扩展的**服务器**应用。是的，服务器，你没有听错！等等，我入门时的最初印象是HTML、CSS、JS是开发客户端的，你得用像PHP来开发服务端，难道我记错了吗？并没有，但现在一切都改变了, 因为在这个新时代中大家都因NODE而欢呼。
 
 JavaScript is a very loosely-typed language and has been built around functions, dynamic objects, prototypal inheritance, and a powerful object literal notation. Like all other languages, it was built on very sound design principles but the problem was that unlike other languages, it had to evolve along with the browser. Web browsers support various features and standards and thus it tried to accommodate all the ideas that browsers made and unfortunately ended up making some very bad design decisions. These weird parts has overshadowed the good parts of the language for most people. Even now, this hasn’t changed even after the evolution of the web and JavaScript. Developer’s have written bad code, and other developer’s have had frightening experience trying to fix up that bad code and thus as a result, JavaScript got a very bad reputation. [Douglas Crockford](http://javascript.crockford.com/javascript.html) have termed it as one of the most misunderstood programming languages.
 
