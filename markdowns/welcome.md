@@ -6,7 +6,7 @@ _请注意，本文假设你了解一点点JavaScript相关的知识，就一点
 
 到目前为止，JavaScript是web界和开源社区最流行的语言，由Brendan Eich创建。JavaScript的流行和重要性可以归功于浏览器和JavaScript引擎，Google的V8 (Chrome)和Mozilla的SpiderMonkey (Firefox)就是性能优越的引擎。
 
-> Eich的礼物即使被掩埋了这么长的时间但终将蜕变为利刃
+> Eich的礼物即使被埋没已久但终将蜕变为利刃
 
 但现代JavaScript不仅仅只限于浏览器，虽然web浏览器仍是JavaScript使用最为广泛的平台，但现代数据库例如MongoDB就使用JavaScript作为脚本和查询语言，最为振奋人心的是JavaScript现可作为一个强大的平台来开发可扩展的**服务器**应用。是的，服务器，你没有听错！等等，我入门时的最初印象是HTML、CSS、JS是开发客户端的，你得用像PHP来开发服务端，我记错了吗？没错，但现在一切都改变了, 因为在这个新时代中大家都因NODE而欢呼。
 
