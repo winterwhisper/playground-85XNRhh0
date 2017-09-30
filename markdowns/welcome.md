@@ -2,9 +2,9 @@
 
 本文是 **“写给新手的现代ES6+ JavaScript”** 系列的第一章
 
-_请注意，本文假设你了解一点点JavaScript相关的只是，就一点点。字符串，数字，布尔等等，要能知道变量就更好了！_
+_请注意，本文假设你了解一点点JavaScript相关的知识，就一点点。字符串，数字，布尔等等，要能知道变量就更好了！_
 
-JavaScript is (by far) the most popular language on the web and open-source ecosystem. Created by Brendan Eich, though JavaScript’s popularity and significance can be regarded due to its interconnection with the browsers and JavaScript Engines, Google’s V8 (Chrome) and Mozilla’s SpiderMonkey(Firefox) engines are just so extremely optimized monsters.
+到目前为止，JavaScript是web界和开源社区最流行的语言，由Brendan Eich创建。JavaScript的流行和重要性可以归功于浏览器和JavaScript引擎，Google的V8 (Chrome)和Mozilla的SpiderMonkey (Firefox)就是性能优越的引擎。
 
 > The gift of Eich, relegated for such a long time,  
 > Will descend upon the great iron,  
