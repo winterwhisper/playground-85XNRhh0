@@ -1,6 +1,6 @@
 # Part1 - 不可思议的Javascript!
 
-This article is Part 1 for the Series **“Modern ES6+ Javascript for those who know only a little about that old Javascript.”**
+本文是**“写给新手的现代ES6+ Javascript”**系列的第一章
 
 _Please note that this article assumes that you have little knowledge about JavaScript. Just a little… string, numbers, booleans… knowledge of variables will be good!_
 
